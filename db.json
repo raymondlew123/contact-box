@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "id": "eel1",
+      "name": "Jackie Chung",
+      "email": "jackiechung@reactmail.com",
+      "phone": "01132675897"
+    },
+    {
+      "id": "ela2",
+      "name": "Beanca Lee",
+      "email": "beancahong@reactmail.com",
+      "phone": "0128760923"
+    }
+  ]
+}
