@@ -1,8 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ContactsPage } from "./contacts/ContactsPage";
+import { Contacts } from "./contacts/Contacts";
 import App from "./App";
 import { ErrorPage } from "./contacts/ErrorPage";
-import { HomePage } from './contacts/HomePage';
+import { Home } from "./contacts/Home";
+import { Create } from "./contacts/Create";
+import { Edit } from "./contacts/Edit";
+import { Delete } from "./contacts/Delete";
 
 const router = createBrowserRouter([
   {
@@ -10,13 +13,21 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-        {
-            index: true,
-            element: <HomePage />,
-          },
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: "contacts",
-        element: <ContactsPage />,
+        element: <Contacts />,
+      },
+      {
+        path: "create",
+        element: <Create />,
+      },
+      {
+        path: "/edit/:id",
+        element: <Edit />,
       },
     ],
   },
