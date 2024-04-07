@@ -7,7 +7,6 @@ A web app for managing personal contacts
 
 # Technologies:
 
-JavaScript
 TypeScript
 Tailwind CSS
 Material UI
