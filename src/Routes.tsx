@@ -5,7 +5,6 @@ import { ErrorPage } from "./contacts/ErrorPage";
 import { Home } from "./contacts/Home";
 import { Create } from "./contacts/Create";
 import { Edit } from "./contacts/Edit";
-import { Delete } from "./contacts/Delete";
 
 const router = createBrowserRouter([
   {

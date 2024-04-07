@@ -5,8 +5,9 @@ export function Header() {
     <header
       className="text-center text-slate-50
   bg-slate-900 h-40 p-5"
-    ><Link to="">
-      <h1 className="text-2xl">Contact Manager</h1>
+    >
+      <Link to="">
+        <h1 className="text-2xl">Contactbox</h1>
       </Link>
       <nav>
         <NavLink
@@ -27,7 +28,6 @@ border-b-2 ${isActive ? "border-white" : "border-transparent"}`
         >
           New
         </NavLink>
-   
       </nav>
     </header>
   );

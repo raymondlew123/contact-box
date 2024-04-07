@@ -5,13 +5,27 @@
 A web app for managing personal contacts
 
 
-
-
-
 # Technologies:
 
 JavaScript
 TypeScript
 Tailwind CSS
+Material UI
 Json Server
-Docker
+
+# Installation
+
+npm install
+
+# Backend
+
+npm run server
+
+# Frontend
+
+npm start
+
+# Docker Image
+
+docker pull raymondlew/contact-box:latest
+
