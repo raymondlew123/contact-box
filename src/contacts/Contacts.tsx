@@ -66,8 +66,11 @@ export function Contacts() {
 
   return (
     <>
-      <StateHandler />
-
+      {contacts?.length === 0 && (
+        <div className="text-center p-5 text-xl">
+          <h1 className="text-xl text-slate-900">No Data Found</h1>
+        </div>
+      )}
       <div className="w-96 mx-auto mt-8">
         {contacts?.length > 0 && (
           <>
@@ -117,39 +120,47 @@ export function Contacts() {
               </div>
             </form>
             <br></br>
-            {searchInput.length > 1 ? (
-              filteredResults.map((contact) => {
-                return (
-                  <ul className="list-none">
-                    <li className="border-b py-4">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+              {searchInput.length > 1 ? (
+                filteredResults.map((contact) => {
+                  return (
+                    <ul className="list-none">
+                      <li className="border-b py-4">
+                        <p className="text-slate-900 ">
+                          Name: {contact.first_name} {contact.last_name}
+                        </p>
+                        <p className=" text-slate-900 ">
+                          Email: {contact.email}
+                        </p>
+                        <p className=" text-slate-900 ">
+                          Phone: {contact.phone}
+                        </p>
+                      </li>
+                    </ul>
+                  );
+                })
+              ) : (
+                <ul className="list-none">
+                  {reversedContacts.map((contact) => (
+                    <li key={contact.id} className="border-b py-4">
                       <p className="text-slate-900 ">
                         Name: {contact.first_name} {contact.last_name}
                       </p>
                       <p className=" text-slate-900 ">Email: {contact.email}</p>
                       <p className=" text-slate-900 ">Phone: {contact.phone}</p>
+                      <br></br>
+                      <Link to={`/edit/${contact.id}`}>
+                        <EditIcon />
+                      </Link>
+                      {""}
+                      <DeleteIcon
+                        onClick={(e) => deleteContact(e, contact.id)}
+                      />
                     </li>
-                  </ul>
-                );
-              })
-            ) : (
-              <ul className="list-none">
-                {reversedContacts.map((contact) => (
-                  <li key={contact.id} className="border-b py-4">
-                    <p className="text-slate-900 ">
-                      Name: {contact.first_name} {contact.last_name}
-                    </p>
-                    <p className=" text-slate-900 ">Email: {contact.email}</p>
-                    <p className=" text-slate-900 ">Phone: {contact.phone}</p>
-                    <br></br>
-                    <Link to={`/edit/${contact.id}`}>
-                      <EditIcon />
-                    </Link>
-                    {""}
-                    <DeleteIcon onClick={(e) => deleteContact(e, contact.id)} />
-                  </li>
-                ))}
-              </ul>
-            )}
+                  ))}
+                </ul>
+              )}
+            </div>
           </>
         )}
       </div>
